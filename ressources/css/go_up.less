@@ -1,0 +1,52 @@
+@charset "UTF-8";
+/* CSS Document */
+
+
+#up{
+    bottom: 40px;
+    height: 40px;
+    position: fixed;
+    right: 40px;
+    width: 40px;
+    z-index: 100;
+    @media screen and (max-width:1080px) {
+         bottom: 20px;
+         right: 20px;
+    }
+    @media screen and (max-width:600px) {
+         /* IE 8 */
+            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+            /* IE 5-7 */
+            filter: alpha(opacity=60);
+            /* Netscape */
+            -moz-opacity: 0.6;
+            /* Safari 1.x */
+            -khtml-opacity: 0.6;
+            opacity: 0.6; 
+
+    }
+
+    
+    
+        #gototop {
+        background: url("../img/go_up.png") no-repeat scroll 0 -40px rgba(0, 0, 0, 0);
+        bottom: 0;
+        cursor: pointer;
+        height: 40px;
+        margin-top: -20px;
+        opacity: 0;
+        position: absolute;
+        right: 0;
+        width: 40px;
+        transition: all 0.3s ease-in-out 0s;
+        
+        &:hover{
+            background-position: 0 0;
+           
+        }
+    }
+    
+}
+
+
+

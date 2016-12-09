@@ -1,0 +1,408 @@
+@charset "UTF-8";
+/* CSS Document */
+
+
+/*
+ * jQuery FlexSlider v2.2.0
+ * http://www.woothemes.com/flexslider/
+ *
+ * Copyright 2012 WooThemes
+ * Free to use under the GPLv2 license.
+ * http://www.gnu.org/licenses/gpl-2.0.html
+ *
+ * Contributing author: Tyler Smith (@mbmufffin)
+ */
+
+
+/* Browser Resets
+*********************************/
+.flex-container a:active,
+.flexslider a:active,
+.flex-container a:focus,
+.flexslider a:focus  {outline: none;}
+.slides,
+.flex-control-nav,
+.flex-direction-nav {margin: 0; padding: 0; list-style: none;}
+
+
+/* FlexSlider Necessary Styles
+*********************************/
+.flexslider {margin: 0; padding: 0; height:100%;}
+.flexslider .slides > li {display: none; -webkit-backface-visibility: hidden;  height:100%; position:relative;} /* Hide the slides before the JS is loaded. Avoids image jumping */
+.flexslider .slides img {width: 100%; display: block;}
+.flex-pauseplay span {text-transform: capitalize;}
+
+/* Clearfix for the .slides element */
+.slides:after {content: "\0020"; display: block; clear: both; visibility: hidden; line-height: 0; height: 0;}
+html[xmlns] .slides {display: block;}
+* html .slides {height: 1%;}
+
+/* No JavaScript Fallback */
+/* If you are not using another script, such as Modernizr, make sure you
+ * include js that eliminates this class on page load */
+.no-js .slides > li:first-child {display: block;}
+
+/* FlexSlider Default Theme
+*********************************/
+.flexslider { position: relative; zoom: 1; }
+.flex-viewport { max-height: 2000px;  height:100%; -webkit-transition: all 1s ease; -moz-transition: all 1s ease; -o-transition: all 1s ease; transition: all 1s ease; }
+.loading .flex-viewport { max-height: 300px;  height:100%; }
+.flexslider .slides { zoom: 1;  height:100%; }
+.carousel li {}
+
+/* Direction Nav */
+.flex-direction-nav {*height: 0;}
+.flex-direction-nav a  { display: block; width: 73px; height: 73px; margin: -35px 0 0; position: absolute; top: 50%; z-index: 10; overflow: hidden; opacity: 0; cursor: pointer; color: rgba(0,0,0,0.8); text-shadow: 1px 1px 0 rgba(255,255,255,0.3); -webkit-transition: all .3s ease; -moz-transition: all .3s ease; transition: all .3s ease; text-indent:-9999px;}
+.flex-direction-nav .flex-prev { left: -10%; background:url(../img/slide_prev.png); }
+.flex-direction-nav .flex-next { right: -10%; background:url(../img/slide_next.png); }
+.flexslider:hover .flex-prev { opacity: 0.7; left: 2%; }
+.flexslider:hover .flex-next { opacity: 0.7; right: 2%; }
+.flexslider:hover .flex-next:hover, .flexslider:hover .flex-prev:hover { opacity: 1; }
+.flex-direction-nav .flex-disabled { opacity: 0!important; filter:alpha(opacity=0); cursor: default; }
+
+/* Pause/Play */
+.flex-pauseplay a { display: block; width: 20px; height: 20px; position: absolute; bottom: 5px; left: 10px; opacity: 0.8; z-index: 10; overflow: hidden; cursor: pointer; color: #000; }
+.flex-pauseplay a:before  { font-size: 20px; display: inline-block; }
+.flex-pauseplay a:hover  { opacity: 1; }
+.flex-pauseplay a.flex-play:before { content: '\f003'; }
+
+/* Control Nav */
+.flex-control-nav {width: 100%; position: absolute; bottom: -40px; text-align: center;}
+.flex-control-nav li {margin: 0 6px; display: inline-block; zoom: 1; *display: inline;}
+.flex-control-paging li a {width: 20px; height: 20px; display: block; background: #666; cursor: pointer; text-indent: -9999px; -webkit-border-radius: 20px; -moz-border-radius: 20px; -o-border-radius: 20px; border-radius: 20px; cursor: pointer !important;}
+.flex-control-paging li a:hover { background: #333; background: rgba(0,0,0,0.7); }
+.flex-control-paging li a.flex-active { background: #000; background: rgba(0,0,0,0.9); cursor: default; }
+
+.flex-control-thumbs {margin: 5px 0 0; position: static; overflow: hidden;}
+.flex-control-thumbs li {width: 25%; float: left; margin: 0;}
+.flex-control-thumbs img {width: 100%; display: block; opacity: .7; cursor: pointer;}
+.flex-control-thumbs img:hover {opacity: 1;}
+.flex-control-thumbs .flex-active {opacity: 1; cursor: default;}
+
+
+/*
+////////////////////////////////////////////////////////////////////////////////////////////// 
+
+	HOME SLIDER
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+*/
+#slider{
+	
+	position:relative;
+	overflow:hidden;
+	height:auto;
+    @media screen and (max-width:600px){
+        height: auto;
+
+    }
+}
+
+.slide_infos{
+	display: block;
+	text-align:center;
+	width:100%;
+	padding: 0 15%;
+	color:#fff;
+	 -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+		 -moz-box-sizing: border-box;         /* Opera/IE 8+ */
+}
+
+
+
+
+
+.slide_infos .button_slide{
+	
+}
+.slide_infos .button_slide:hover{
+	
+}
+
+
+@media screen and (max-width: 860px) {
+  .flex-direction-nav .flex-prev { opacity: 1; left: 10px;}
+  .flex-direction-nav .flex-next { opacity: 1; right: 10px;}
+}
+
+
+ section#slider{
+
+        .slider{
+
+        height: 500px;
+        overflow: hidden;
+        position: relative;
+        border: 1px solid @white;
+        @media screen and (max-width:600px) {
+            height: 360px;
+        }
+         
+
+        }
+       
+        
+         
+         .flexslider{
+              height: 100%;
+                margin: 0;
+                padding: 0;
+            .flex-direction-nav .flex-next{
+                background-size: contain;
+                width: 60px;
+                height: 60px;
+                background-repeat: no-repeat;
+                display: block;
+                 @media only screen and (-webkit-min-device-pixel-ratio: 2) {
+                    background-image: url("../img/slide_nextX2.png");
+                    background-size: contain;
+                  }
+               
+
+                @media screen and (max-width:600px) {
+                     width: 35px;
+                     height: 35px;
+                }
+                
+            }
+            .flex-direction-nav .flex-prev{
+                background-size: contain;
+                width: 60px;
+                height: 60px;
+                background-repeat: no-repeat;
+                display: block;
+                 @media only screen and (-webkit-min-device-pixel-ratio: 2) {
+                    background-image: url("../img/slide_prevX2.png");
+                    background-size: contain;
+                  }
+                
+                @media screen and (max-width:600px) {
+                     width: 35px;
+                     height: 35px;
+                }
+                
+                
+            }
+
+            .flex-control-paging {
+                position: absolute;
+                bottom: 10px;
+                z-index: 2;
+                width: auto;
+                right: 10px;
+                @media screen and (max-width:600px) {
+                    right: auto;
+                    text-align: center;
+                    width: 100%;
+
+                }
+
+            }
+             .flex-control-paging li a{
+               background:none;
+                cursor: default;
+                border: 1px solid @white;
+            }
+            
+            .flex-control-paging li a.flex-active {
+       
+                cursor: default;
+              background:@white;
+
+            }
+            
+            ul.slides{
+                
+                li{
+                    position: relative;
+                    background-repeat:no-repeat;
+                    background-position:center center;
+                    background-size:cover;
+                    &:hover{
+                        a.link_slide{
+                             /* IE 8 */
+                             -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+                            /* IE 5-7 */
+                            filter: alpha(opacity=40);
+                             /* Netscape */
+                             -moz-opacity: 0.4;
+                             /* Safari 1.x */
+                            -khtml-opacity: 0.4;
+                            opacity: 0.4; 
+
+                            background: @blue_light;
+                        }
+                    }
+
+                    a.link_slide{
+                        position: absolute;
+                        z-index: 2;
+                        width: 100%;
+                        height: 100%;
+                        display:bloc;
+                        background: @blue;
+                        /* IE 8 */
+                         -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+                        /* IE 5-7 */
+                        filter: alpha(opacity=0);
+                         /* Netscape */
+                         -moz-opacity: 0;
+                         /* Safari 1.x */
+                        -khtml-opacity: 0;
+                        opacity: 0; 
+                         transition: all 0.4s ease-out 0s;
+                         -webkit-transition: all 0.4s ease-out 0s;
+
+
+
+
+                    }
+
+                    .overlay{
+                        width: 100%;
+                        height: 70%;
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        .quick-gradient(top, 0.8);
+
+                    }
+                    
+                    .slide_infos{
+                        padding:30px  2%;
+                        position: absolute;
+                        bottom: 0;
+                        @media screen and (max-width:600px) {
+                          background: @blue;
+                        }
+
+                       
+                      
+
+                        width: 100%;
+                        @media screen and (max-width:600px) {
+                               height: auto;
+                               padding-bottom: 50px;
+                            
+
+                        }
+                      
+                        
+                        .big_text{
+                            width: 100%;
+                            position: relative;
+                            text-shadow: none;
+                            padding-bottom: 30px;
+
+
+                   
+                           
+
+                            .big_text_inside{
+                        	 width: auto;
+                        	 text-align: left;
+                        	 background: none;
+                             width: 100%;
+
+
+                             .wrap{
+                                width: 80%;
+                                display: block;
+                                text-align: center;
+                                margin:0 10% ;
+                             }
+                           
+
+                            }
+
+                            h3{
+                            	font-size: 36px;
+                                text-transform: uppercase;
+                                text-align: center;
+                            	font-weight: 500;
+                            	color: @white;
+                            	display: inline-block;
+                                font-weight: 100;
+                            	margin: 0;
+                                width: 100%;
+                                @media screen and (max-width:600px) {
+                                  font-size: 26px;
+                                }
+                                 @media screen and (max-width:600px) {
+                                  font-size: 18px;
+                                }
+
+
+                            }
+                             p{
+                            	font-size: 20px;
+                            	font-weight: 400;
+                            	color: @white;
+                            	display: inline-block;
+                                text-transform: none;
+                                text-align: center;
+                            	margin: 0;
+                              
+                            	width: 100%;
+                                @media screen and (max-width:800px) {
+                                 font-size: 15px;
+                                }
+                                 @media screen and (max-width:600px) {
+                                  display: none;
+                                }
+
+                            }
+
+                            .button{
+                                @media screen and (max-width:600px) {
+                                color: @white;
+                                background: @purple;
+                                }
+                            }
+
+
+                            .wrap{
+                            	display: inline-block;
+                            	width: 90%;
+                            	height: auto;
+                            	text-align: left;
+                                float: left;
+                                 @media screen and (max-width:600px) {
+                                  text-align: center;
+                                }
+                            }
+
+                       
+                            
+                            
+                            @media screen and (max-width:1024px) {
+                                   
+                                     
+                            }
+                            @media screen and (max-width:800px) {
+                                 
+                                   
+                            }
+                            @media screen and (max-width:600px) {
+                                  
+                                   
+                                   
+                            }
+                            @media screen and (max-width:360px) {
+                               
+                            }
+                            
+                        }
+            
+                        
+                    }
+                     
+                }
+                
+             
+            }
+            
+            
+         }
+    }

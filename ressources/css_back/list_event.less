@@ -1,0 +1,182 @@
+@charset "UTF-8";
+/* CSS Document */
+/* VARIABLE charte couleur */
+
+.next_events{
+
+	.wrapper{
+		
+	}
+
+	.wrapper_inside{
+	 	
+        
+		.content_section{
+            border: 1px solid @white;
+           
+			&.bg_white{
+          	 background: @white;
+        	}
+            .container-fluid{
+              
+            }
+
+            .head_content{
+                background: @white;
+                width: 100%;
+                display: inline-block;
+                float: left;
+                h2{
+                    font-size: 24px;
+                    text-transform: uppercase;
+                    color: @blue;
+                    font-weight: 500;
+                }
+
+            }
+
+            ul.events{
+                display: inline-block;
+                width: 100%;
+                padding: 0;
+
+                li{
+                    display: inline-block;
+                    width: 100%;
+                    margin-bottom: 10px;
+
+                    ul.grid{
+                        display: table;
+                         @media screen and (max-width:800px) {
+                            display: inline-block;
+                         }
+                        li{
+                            width: 33.33333333333333%;
+                            display: table-cell;
+                            vertical-align: middle;
+                              @media screen and (max-width:800px) {
+                                width: 100%;
+                                display: inline-block;
+                                margin-bottom: 0;
+                                margin-top: 0;
+                                height: auto;
+
+                              }
+                        }
+                    }
+
+                    .event{
+                        height: auto;
+                    }
+
+                    .col_date{
+                        padding-right: 0;
+                        height: 100%;
+
+                    }
+                    .col_what{
+                        padding-right: 0;
+                        padding-left: 0;
+                        height: 100%;
+                         border-top: 1px solid @blue;
+                        border-bottom: 1px solid @blue;
+                        .content{
+                             position: relative;
+                             text-align: left;
+                              @media screen and (max-width:800px) {
+                                text-align: center;
+                              }
+
+                            span{
+                                position: absolute;
+                                right: 0;
+                                top: 5px;
+                                font-size: 30px;
+                                color: @blue;
+                                 @media screen and (max-width:800px) {
+                                    position: relative;
+                                    top: auto;
+                                    right: auto;
+                                 }
+                                &.hope{
+                                    color: #8faccc;
+                                } 
+                            }
+                        }
+
+
+
+
+                         @media screen and (max-width:800px) {
+                            background-color: @white; 
+                             border-left: 1px solid @blue;
+                             border-right: 1px solid @blue;
+                            border-top: 0px solid @blue;
+
+                         }
+
+                    }
+
+                    .col_match{
+                        height: 100%;
+                        border-top: 1px solid @blue;
+                        border-bottom: 1px solid @blue;
+
+
+                        .content{
+                            padding: 4% 2% 2% 2%;
+
+                        }
+
+
+                         @media screen and (max-width:800px) {
+                             border-left: 1px solid @blue;
+                             border-right: 1px solid @blue;
+                              border-bottom: 0px solid @blue;
+
+                         }
+                    }
+
+                  
+
+                    .content{
+                        text-align: center;
+                        height: 100%;
+                        width: 100%;
+                        display: inline-block;
+                        &.match{
+                           
+                        }
+                       
+
+                        .date{
+                            font-size: 17px;
+                             padding: 2%;
+
+                        }
+                        .what{
+                             font-size: 19px;
+                               padding: 2% 35px 2% 0;
+                              
+                               @media screen and (max-width:800px) {
+                                padding: 0;
+                               
+                             }
+                        }
+                        .match{
+                             font-size: 20px;
+
+                        }
+                    }
+
+
+                }
+
+
+            }
+
+           
+        }
+	}
+
+}

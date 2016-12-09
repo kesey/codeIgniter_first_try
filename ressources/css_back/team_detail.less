@@ -1,0 +1,64 @@
+@charset "UTF-8";
+/* CSS Document */
+/* VARIABLE charte couleur */
+
+.team_detail{
+    float: left;
+
+
+	.wrapper{
+		
+	}
+
+	.wrapper_inside{
+        float: left;
+	 
+
+		.content_section{
+            width: 100%;
+            float: left;
+           
+            border: 1px solid @white;
+        
+			&.bg_white{
+          	 background: @white;
+        	}
+
+           
+            .players{
+                width: 100%;
+                display: inline-block;
+                float: left;
+               padding: 0;
+                @media screen and (max-width:800px){
+                    width: 100%;
+                }
+                .illustration{
+                    height: 400px;
+                    max-height: 400px;
+                    width: 100%;
+                    background-position: top center; 
+                }
+
+
+                .content{
+                    width: 100%;
+                    padding: 2% 2% 2% 2%;
+                    color: @blue;
+                      p{
+                        font-size: 14px;
+                        color: @black;
+                      }
+
+                      h5{
+                        font-weight: 800;
+                      }
+
+
+                }
+            }
+
+        }
+	}
+
+}

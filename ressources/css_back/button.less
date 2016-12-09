@@ -1,0 +1,130 @@
+@charset "UTF-8";
+/* CSS Document */
+/* VARIABLE charte couleur */
+
+.btn{
+transition: all 0.4s ease-out 0s;
+ -webkit-transition: all 0.4s ease-out 0s;
+}
+
+.btn-default{
+	.rounded(0px);
+	background:@blue;
+	border: none;
+	color: @white;
+
+	&:hover{
+		background: @white;
+		color: blue_light;
+
+	}
+}
+
+.btn-default2{
+	.rounded(0px);
+	background:@blue;
+	border: none;
+	color: @white;
+
+	&:hover{
+		background: @blue;
+		color: @white;
+		opacity: 0.6;
+		text-decoration: none;
+
+	}
+}
+
+.btn-red{
+	.rounded(0px);
+	background:@red;
+	border: none;
+	color: @white;
+
+	&:hover{
+		background: @white;
+		color: @red;
+		
+
+	}
+}
+.btn-white{
+	.rounded(0px);
+	background:@white;
+	border: none;
+	color: @blue;
+	
+	&:hover{
+		opacity: 0.5;
+
+	}
+}
+.btn-submit{
+	.rounded(0px);
+	background:@blue;
+	border: none;
+	color: @white;
+	text-transform: uppercase;
+	&:hover{
+		background: @blue_light;
+		color: @white;
+
+	}
+
+	&.btn-lg{
+		padding: 20px 26px;
+	}
+}  
+
+.button{
+	padding:10px;
+	font-size: 14px;
+	display: inline-block;
+	cursor: pointer;
+	text-decoration: none;
+	font-weight: bold;
+	&:hover{
+		text-decoration: none;
+		opacity: 0.6;
+	}
+	&.white{
+		background: @white;
+		color: @purple;
+	}
+	&.green{
+		background: @green;
+		color: @white;
+	}
+	&.red{
+		background: @red;
+		color: @white;
+	}
+	&.yellow{
+		background: @yellow;
+		color: @white;
+	}
+	&.purple{
+		background: @purple;
+		color: @white;
+	}
+	&.azur{
+		background: @azur;
+		color: @white;
+	}
+	&.dark_green{
+		background: @dark_green;
+		color: @white;
+	}
+
+	&.plus{
+		span{
+			font-size: 12px;
+		}
+
+	}
+
+
+	.icon-ctrl4{
+		font-weight: bold;
+	}
+}

@@ -1,0 +1,291 @@
+@charset "UTF-8";
+/* CSS Document */
+
+
+header{
+display: inline-block;
+width: 100%;
+height: auto;
+float: left;
+
+
+
+
+	.header_top{
+		display: inline-block;
+		position: relative;
+		width: 100%;
+		height: 105px;
+
+		.search_bar{
+			position: absolute;
+			right: 0;
+			width: auto;
+			bottom: 0;   
+		    @media screen and (max-width:1080px) {
+		        display: none;  
+		    }
+
+          input[type="submit"]{ 
+         
+            color: @white;
+          }
+
+           input[type="text"]{ 
+            .rounded(0px);
+            border: none;
+            font-weight: 100;
+          
+          }
+
+          .btn-submit{
+          	border: 1px solid @white;
+          }
+
+
+		}
+
+
+
+
+		.the_logo{
+			
+			width: 297px;
+			height: 80px;
+			position: absolute;
+			left: 0;
+			top: 0;
+			display: block;
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-image: url("../img/logo.jpg");
+
+			@media screen and (max-width:800px){
+	         	width: 200px;
+	         	height: 54px;
+	        }
+	        @media screen and (max-width:600px){
+	         top: 12px;
+	        }
+
+			h1{
+				text-indent: -100000000000px;
+				opacity: 0;
+				visibility: hidden;
+				position: absolute;
+			}
+
+		}
+	}
+
+
+	.cd-nav-trigger{
+	display: none;
+		@media screen and (max-width:1080px){
+		display: inline-block;
+		background: @white;
+		color: @blue;
+		padding: 10px;
+		position: absolute;
+		right: 20px;
+		top: 20px;
+		font-weight: bold;
+		text-transform: uppercase;
+		z-index: 10;
+		}
+
+		@media screen and (max-width:600px){
+			background: @blue;
+			color: @white;
+		}
+	}
+
+
+ nav{
+
+    height: 100%;
+    width: 100%;
+    display: inline-block;
+    position: relative;
+    height: auto;
+    float: left;
+    background: @white;
+    .box-shadow-custom(0px, 0px, 7px, 0.4);
+
+
+	   
+    @media screen and (max-width:1080px) {
+        display: none;  
+    }
+
+	    ul{
+	        height: 100%;
+	        width: 100%;
+	        margin: 0;
+	        padding-left: 0;
+	        display: inline-block;
+	        text-align: left;
+	        font-size: 0;
+	       
+	       
+	       
+	        li{
+	            list-style-type: none;
+	            display: inline-block;
+	            position: relative;
+	            padding: 23px 0;
+	            position: relative;
+	          
+	             &:last-child{
+	             	float: right;
+	             	position: absolute;
+	             	right: 0;
+	             	top: 0;
+	             	padding: 15px 23px 0 0;
+
+	             	&:hover{
+	             		background: none;
+	             		&:after{
+	             			display: none;
+	             		}
+	             	}	
+
+	            }
+
+	           
+	            &.active, &:hover{
+            	  &:after{
+                  width: 100%;
+                  background: @red;
+                  content: "";
+                  height: 7px;
+                  position: absolute;
+                  bottom: 0;
+                  left: 0;
+                }
+            
+	            	
+	                a{
+	                	color: @blue_light;
+	               
+	                
+	                 
+	                }
+	            }
+	            &:hover{
+	                  ul.second_level{
+	                    display: inline-block;
+	                }
+	            }
+	           
+	         
+	            a{
+
+	                color: @blue_light;
+	                font-size: 16px;
+	                text-decoration: none;
+	                display: inline-block;
+	                position: relative;
+	                padding:0 22px;
+	                font-family: 'Poppins', sans-serif;
+	                width: auto;
+	                position: relative;
+	                text-transform: uppercase;
+	                font-weight: 500;
+	              
+	                &:hover{
+	                   text-decoration: none;
+	                   
+	                }
+	                
+	                &.social{
+	                	width: auto;
+	                	padding: 0 5px;
+	                	border: 0;
+	                	display: inline-block;
+	                	&:after{
+	                		display: none;
+	                	}
+	                	span{
+	                		font-size: 35px;
+
+	                		&.icon-facebook{
+	                			color: #3b559f;
+
+	                		}
+	                	}
+	                }
+	                
+	                
+	                
+	            }
+	               ul.second_level{
+	                   
+	                   display:none;
+	                    height: auto;
+	                    text-align: left;
+	                    left: 0;
+	                    line-height: normal;
+	                    padding: 0px;
+	                    position: absolute;
+	                    top: 69px;
+	                    width: auto;
+	                    z-index: 10;
+	                    background: @white;
+	                    background: rgba(250,250,250, 0.8);
+	                    min-width: 200px;
+	                   
+	                   
+	                    
+	                   
+	                    
+	                    li{
+	                        float: left;
+	                        height: auto;
+	                        margin: 1px 0;
+	                        padding: 0;
+	                        width: 100%;
+	                        &:hover{
+	                        	 &:after{
+	                        	 	display: none;
+	                        	 }
+	                        }
+	                        &:last-child{
+	                        	position: relative;
+	                        	top: auto;
+	                        	left: auto;
+	                        }
+	                       
+	                        
+	                        
+	                        a{
+		                        color: @blue_light;
+		                        font-size: 14px;
+		                        text-transform: none;
+		                        line-height: 20px;
+		                        text-transform: none;
+		                        padding: 10px;
+		                        text-decoration: none;
+		                        width: 96%;
+		                        font-family: 'Open Sans', sans-serif;
+		                     
+		                        &:hover{
+		                        	background: none;
+		                        	text-decoration: underline;
+		                        	 &:after{
+		                        	 	display: none;
+		                        	 }
+		                        }
+
+	                        }
+	                        
+	                    }
+	                     
+	                }
+	        }
+	    }
+	    
+	}
+}
+
+

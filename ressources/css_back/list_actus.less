@@ -1,0 +1,160 @@
+@charset "UTF-8";
+/* CSS Document */
+/* VARIABLE charte couleur */
+
+.list_actus{
+    float: left;
+
+	.wrapper{
+		
+	}
+
+	.wrapper_inside{
+          float: left;
+	 	
+        
+		.content_section{
+            border: 1px solid @white;
+       
+			&.bg_white{
+          	 background: @white;
+        	}
+            .container-fluid{
+              
+            }
+
+            .head_content{
+                background: @white;
+                width: 100%;
+                display: inline-block;
+                float: left;
+                h2{
+                    font-size: 24px;
+                    text-transform: uppercase;
+                    color: @blue;
+                    font-weight: 500;
+                }
+
+            }
+
+
+                ul.list_actus{
+                width: 100%;
+                padding: 0;
+                display: inline-block;
+
+                li{
+                    list-style-type: none;
+                    width: 100%;
+                    display: inline-block;
+                    margin: 10px 0;
+
+
+                    .content{
+                        padding: 0 4% 2% 0;
+
+                        span.date{
+                            font-size: 14px;
+                            color: @black;
+                            text-transform: uppercase;
+                        }
+
+                        h3{
+                            color: @blue;
+                            text-transform: none;
+                            margin: 0;
+                            font-size: 24px;
+                            font-weight: 500;
+                             @media screen and (max-width:800px) {
+                            font-size: 20px;
+                            }
+                        }
+
+                        p{
+                            font-size: 16px;
+                        }
+
+                    }
+
+                    .illustration{
+                        height: 170px;
+                        width: 100%;
+                        display: inline-block;
+                    }
+
+                     &.big{
+                          margin-top: 0px;
+                        
+
+                        .big_image{
+                            float: none;
+                            padding: 0;
+                            
+
+
+                            .illustration{
+                            height: 380px;
+                            width: 100%;
+                                @media screen and (max-width:600px) {
+                                padding: 0 !important;
+                                height: 200px;
+
+                                }
+                            } 
+
+                        }
+
+                        .row{
+                              .content{
+                            padding: 2%;
+                             @media screen and (max-width:800px) {
+                                padding: 0 !important;
+                             }
+
+                            span.date{
+                                font-size: 14px;
+                                color: @black;
+                                text-transform: uppercase;
+                            }
+
+                            h3{
+                                color: @blue;
+                                text-transform: none;
+                                margin: 0;
+                                font-size: 30px;
+                                font-weight: 500;
+                                text-transform: uppercase;
+                                  @media screen and (max-width:800px) {
+                                    font-size: 20px;
+                                    text-transform: none;
+                                  }
+                            }
+
+                            p{
+                                font-size: 16px;
+                            }
+
+                            a{
+                                display: inline-block;
+                                margin-top: 20px;
+                                 @media screen and (max-width:800px) {
+                                margin: 0;
+                                }
+                            }
+
+                        }
+
+                        }
+
+                      
+
+                    }    
+
+                }
+
+            }
+           
+        }
+	}
+
+}

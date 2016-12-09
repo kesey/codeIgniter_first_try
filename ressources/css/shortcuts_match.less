@@ -1,0 +1,129 @@
+@charset "UTF-8";
+/* CSS Document */
+/* VARIABLE charte couleur */
+
+.shortcuts_match{
+	float: left;
+	background:none;
+
+	.wrapper{
+	
+		
+	}
+
+	.wrapper_inside{
+		padding: 0;
+		float: left;
+		
+		
+		.content_section{
+			display: inline-block;
+			width: 100%;
+			float: left;
+		
+		
+
+			ul{
+				padding: 0;
+				margin: 0;
+				float: left;
+				display: inline-block;
+				vertical-align: top;
+				li{
+					display: inline-block;
+					width: 25%;
+					margin: 0;
+					padding: 0;
+					vertical-align: top;
+				
+					@media screen and (max-width:800px) {
+						width: 50%;
+					}
+					
+					
+				
+					&.active{
+						.tab{
+							a{
+								background: @blue;
+							}
+						}
+					}
+
+					.tab{
+						display: inline-block;
+						width: 100%;
+						border: 1px solid @white;
+						overflow: hidden;
+						height: 72px;
+						position: relative;
+						background: @blue_light;
+						float: left;
+						@media screen and (max-width:600px) {
+							height: 30px;
+						
+						}
+
+						a{
+							width: 100%;
+							height: 100%;
+							line-height: 72px;
+							display: inline-block;
+							position: absolute;
+							z-index: 2;
+							text-align: center;
+							color: @white;
+							font-size: 18px;
+							text-transform: uppercase;
+							transition: all 0.4s ease-out 0s;
+							-webkit-transition: all 0.4s ease-out 0s;
+							&:hover{
+								background: @blue;
+								text-decoration: none;
+							}
+							@media screen and (max-width:600px) {
+							font-size: 12px;
+							line-height: 30px;
+						
+							}
+
+						}
+						
+
+
+
+
+						.illustration{
+							width: 100%;
+							height: 100%;
+							display: inline-block;
+							position: absolute;
+							top: 0;
+							left: 0;
+							z-index: 1;
+							 /* IE 8 */
+                             -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
+                            /* IE 5-7 */
+                            filter: alpha(opacity=40);
+                             /* Netscape */
+                             -moz-opacity: 0.4;
+                             /* Safari 1.x */
+                            -khtml-opacity: 0.4;
+                            opacity: 0.4; 
+							
+
+
+						}
+
+					
+
+					
+					}
+
+				}
+			}
+		}
+	
+	}
+
+}

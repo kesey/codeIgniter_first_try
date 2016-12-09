@@ -1,0 +1,112 @@
+@charset "UTF-8";
+/* CSS Document */
+/* VARIABLE charte couleur */
+
+.player_select{
+    float: left;
+
+
+	.wrapper{
+		
+	}
+
+	.wrapper_inside{
+        float: left;
+	 
+
+		.content_section{
+            width: 100%;
+            float: left;
+        
+            border: 1px solid @white;
+        
+			&.bg_white{
+          	 background: @white;
+        	}
+
+            ul{
+                display: inline-block;
+                width: 100%;
+                height: auto;
+                padding: 0;
+                margin: 0;
+                float: left;
+                overflow: hidden;
+
+                li{
+                    width: 12.5%;
+                    height: 125px;
+                    float: left;
+                    display: inline-block;
+                    margin: 0;
+                    @media screen and (max-width:999px){
+                        width: 16.66666666666666%;
+
+                    }
+                    @media screen and (max-width:800px){
+                        width: 25%;
+                        height: 100px;
+
+                    }
+                    @media screen and (max-width:360px){
+                        width: 33.3333333333%;
+                        height: 100px;
+
+                    }
+
+
+                    &:hover{
+                        .tab{
+                            .illustration{
+                                /* IE 8 */
+                                 -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
+                                /* IE 5-7 */
+                                filter: alpha(opacity=60);
+                                 /* Netscape */
+                                 -moz-opacity: 0.6;
+                                 /* Safari 1.x */
+                                -khtml-opacity: 0.6;
+                                opacity: 0.6; 
+                                 transition: all 0.4s ease-out 0s;
+                                 -webkit-transition: all 0.4s ease-out 0s;
+
+
+                            }
+                        }
+                    }
+
+                    .tab{
+                        width: 100%;
+                        height: 100%;
+                        float: left;
+                        position: relative;
+                        background: @blue;
+                        border: 1px solid @white;
+
+                        a{
+                            position: absolute;
+                            width: 100%;
+                            height: 100%;
+                            top: 0;
+                            left: 0;
+                            display: inline-block;
+                            z-index: 2;
+
+                        }
+
+                        .illustration{
+                            width: 100%;
+                            height: 100%;
+                        }
+
+                    }
+
+                }
+            }
+
+           
+
+        }
+	}
+
+}

@@ -1,0 +1,191 @@
+@charset "UTF-8";
+/* CSS Document */
+
+
+
+
+
+ section#slider2{
+    float: left;
+    width: 100%;
+    display: inline-block;
+
+
+     .flex-direction-nav .flex-next{
+                background-size: contain;
+                width: 60px;
+                height: 60px;
+                background-repeat: no-repeat;
+                display: block;
+                 background-image:url(../img/slide_next.png);
+                 right: 2%;
+                 z-index: 200;
+                 opacity: 1;
+
+                 @media only screen and (-webkit-min-device-pixel-ratio: 2) {
+                    background-image: url("../img/slide_nextX2.png");
+                    background-size: contain;
+                  }
+
+               
+
+                @media screen and (max-width:600px) {
+                     width: 35px;
+                     height: 35px;
+                }
+                
+            }
+            .flex-direction-nav .flex-prev{
+                background-size: contain;
+                width: 60px;
+                height: 60px;
+                background-repeat: no-repeat;
+                display: block;
+                 background-image:url(../img/slide_prev.png);
+                 left: 2%; 
+                 z-index: 200;
+                  opacity: 1;
+                    @media only screen and (-webkit-min-device-pixel-ratio: 2) {
+                        background-image: url("../img/slide_prevX2.png");
+                        background-size: contain;
+                  }
+                
+                @media screen and (max-width:600px) {
+                     width: 35px;
+                     height: 35px;
+                }
+                
+                
+            }
+
+            .flex-control-paging {
+                display: none;
+
+            }
+             .flex-control-paging li a{
+               background:none;
+                cursor: default;
+                border: 1px solid @white;
+            }
+            
+            .flex-control-paging li a.flex-active {
+       
+            cursor: default;
+              background:@white;
+          }
+
+
+    .slider2{
+
+        height: auto;
+        overflow: hidden;
+        position: relative;
+        border: 1px solid @white;
+       
+         float: left;
+        width: 100%;
+        display: inline-block;
+      
+
+        .slides{
+            float: left;
+            li{
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center center;
+                float: left;
+
+               .slide_content{
+                height:480px;
+                position: relative;
+                display: inline-block;
+                width: 100%;
+                float: left;
+                  @media screen and (max-width:600px) {
+                    height: 360px;
+                } 
+
+                .content_inside{
+                    display: inline-block;
+                    width: 100%;
+                    height: auto;
+                    position: absolute;
+                    bottom: 0;
+                    background: @blue;
+                    padding: 2%;
+                      @media screen and (max-width:600px) {
+                               padding: 20px  2% 2% 10px;
+                         }
+
+                    .wrap_btn{
+                        vertical-align: middle;
+                         @media screen and (max-width:600px) {
+                            text-align: center;
+                         }
+
+                    }
+
+                  
+
+                 h3{
+                        font-size: 25px;
+                 
+                        text-align: center;
+                        font-weight: 500;
+                        color: @white;
+                        display: inline-block;
+                        text-align: left;
+                        font-weight: 100;
+                        margin: 0;
+                        width: 100%;
+                        text-transform: none;
+                        span{
+                            width: 100%;
+                            display: inline-block;
+                            font-size: 16px;
+                            text-transform: uppercase;
+                        }
+                        @media screen and (max-width:600px) {
+                          font-size: 18px;
+                          text-align: center;
+                        }
+                         @media screen and (max-width:600px) {
+                          font-size: 16px;
+                        }
+                    }
+
+
+                            
+                     p{
+                        font-size: 20px;
+                        font-weight: 400;
+                        color: @white;
+                        display: inline-block;
+                        text-transform: none;
+                        text-align: center;
+                        margin: 0;
+                      
+                        width: 100%;
+                        @media screen and (max-width:800px) {
+                         font-size: 15px;
+                        }
+                         @media screen and (max-width:600px) {
+                          display: none;
+                        }
+
+                    }
+
+
+
+                }
+
+               }
+
+            }
+
+        }     
+
+    }
+ }      
+        
+        

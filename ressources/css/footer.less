@@ -1,0 +1,103 @@
+@charset "UTF-8";
+/* CSS Document */
+/* VARIABLE charte couleur */
+
+
+footer{
+	display: inline-block;
+	height: auto;
+	width: 100%;
+	float: left;
+	background-color:@white;
+	margin-top: 100px;
+	@media screen and (max-width:800px) {
+		margin-top: 20px;
+	}
+	@media screen and (max-width:360px) {
+		margin-top: 0;
+	}
+
+
+
+
+
+	.footer_content{
+		display: inline-block;
+		width: 100%;
+		height: auto;
+		float: left;
+		padding: 20px 0;
+
+		ul{
+			padding: 0;
+			width: 100%;
+			text-align: center;
+
+			li{
+				list-style-type: none;
+				display: inline-block;
+				width: auto;
+				margin: 0 1%;
+				&:first-child{
+					@media screen and (max-width:800px) {
+					     width:100%;
+					     margin-bottom: 20px;
+					}
+				}
+				
+				img{
+					width: auto;
+					@media screen and (max-width:800px) {
+				     width:100px;
+				    }
+				}
+
+				.byYourSide{
+					@media screen and (max-width:800px) {
+					    width:40px;
+					}
+				}
+				
+			}
+		}
+	}
+
+
+
+	.footer_content2{
+		display: inline-block;
+		width: 100%;
+		height: auto;
+		float: left;
+		padding: 20px 0;
+		@media screen and (max-width:600px) {
+		padding: 0 0 60px 0;
+		}
+
+
+		ul{
+			padding: 0;
+			width: 100%;
+			text-align: center;
+
+			li{
+				list-style-type: none;
+				display: inline-block;
+				width: auto;
+				margin:1%;
+				
+				
+				a{
+					color: @blue;
+					font-size: 16px;
+					font-weight: 400;
+					text-transform: uppercase;
+
+				}
+			}
+		}
+	}
+
+
+
+}

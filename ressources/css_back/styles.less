@@ -1,0 +1,562 @@
+@charset "UTF-8";
+/* CSS Document */
+@import "elements.less";
+
+/* VARIABLE charte couleur */
+@exemple:#383838;
+@dark_green:#475805;
+@green:#9abf05;
+@middle_green:#748f07;
+@red:#e3001b;
+@yellow:#f8ba15;
+@purple:#a781b5;
+@azur:#4ebbb3;
+@white:#ffffff;
+@black:#000000;
+@border:#bcbcbc;
+@blue:#053872;
+@blue_light:#365398;
+
+
+
+
+/* CUSTOM-GRADIENT */
+.custom-gradient (@origin: left, @start: #ffffff, @stop: #000000) {
+    background-color: @start;
+    background-image: -webkit-linear-gradient(@origin, @start, @stop);
+    background-image: -moz-linear-gradient(@origin, @start, @stop);
+    background-image: -o-linear-gradient(@origin, @start, @stop);
+    background-image: -ms-linear-gradient(@origin, @start, @stop);
+    background-image: linear-gradient(@origin, @start, @stop);
+}
+ 
+/* Implementation 
+#someDiv {
+    .custom-gradient(left, #663333, #333333);
+}
+*/
+
+/* QUICK GRADIENT */
+.quick-gradient (@origin: left, @alpha: 0.2) {
+    background-image: -webkit-linear-gradient(@origin, rgba(0,0,0,0.0), rgba(0,0,0,@alpha));
+    background-image: -moz-linear-gradient(@origin, rgba(0,0,0,0.0), rgba(0,0,0,@alpha));
+    background-image: -o-linear-gradient(@origin, rgba(0,0,0,0.0), rgba(0,0,0,@alpha));
+    background-image: -ms-linear-gradient(@origin, rgba(0,0,0,0.0), rgba(0,0,0,@alpha));
+    background-image: linear-gradient(@origin, rgba(0,0,0,0.0), rgba(0,0,0,@alpha));
+}
+ 
+/* Implementation 
+#somediv {
+    background-color: BADA55;
+    .quick-gradient(top, 0.2);
+}
+*/
+
+/* WEBKIT-REFKECTION */
+.reflect (@length: 50%, @opacity: 0.2){
+    -webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(@length, transparent), to(rgba(255,255,255,@opacity)));
+}
+ 
+/* Implementation 
+#somediv {
+    .reflect(20%, 0.2);
+}
+*/
+
+/* box-shadow with alpha */
+.box-shadow-custom (@x: 0px, @y: 3px, @blur: 5px, @alpha: 0.5) {
+    -webkit-box-shadow: @x @y @blur rgba(0, 0, 0, @alpha);
+    -moz-box-shadow: @x @y @blur rgba(0, 0, 0, @alpha);
+    box-shadow: @x @y @blur rgba(0, 0, 0, @alpha);
+}
+ 
+/* Implementation 
+#somediv {
+    .box-shadow-custom(5px, 5px, 6px, 0.3);
+}
+*/
+
+
+
+@font-face {
+    font-family: 'cfoot';
+    src: url('../fonts/cfoot.eot');
+      font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'cfoot';
+    src: url('../fonts/cfoot.ttf');
+      font-weight: normal;
+    font-style: normal;
+}
+.picto {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'cfoot' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    
+    /* Enable Ligatures ================ */
+    letter-spacing: 0;
+    -webkit-font-feature-settings: "liga";
+    -moz-font-feature-settings: "liga=1";
+    -moz-font-feature-settings: "liga";
+    -ms-font-feature-settings: "liga" 1;
+    -o-font-feature-settings: "liga";
+    font-feature-settings: "liga";
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-fille:before {
+    content: "\e900";
+}
+.icon-garcon:before {
+    content: "\e901";
+}
+.icon-search:before {
+    content: "\e986";
+}
+.icon-trophy:before {
+    content: "\e99e";
+}
+.icon-ctrl2:before {
+    content: "\e42d";
+}
+.icon-ctrl:before {
+    content: "\ea50";
+}
+.icon-facebook:before {
+    content: "\ea8c";
+}
+.icon-facebook3:before {
+    content: "\ea8e";
+}
+.icon-twitter:before {
+    content: "\ea91";
+}
+.icon-twitter3:before {
+    content: "\ea93";
+}
+
+
+
+
+
+body {
+    
+    font-family: 'Lato', sans-serif;
+    background-color: @white;
+    margin: 0;
+    padding: 0;
+    border: 0 none;
+    min-height: 100%;
+    width: 100%;
+    height: 100%;
+    &.nav-is-visible{
+        overflow: hidden;
+    }
+    &.overflow {
+      overflow: hidden;
+      position: fixed;
+    }
+
+
+
+}
+
+.wrap{
+    width: 100%;
+    display: inline-block;
+    height: auto;
+    &.center{
+        text-align: center;
+    }
+    &.left{
+        text-align: left;
+    }
+    &.right{
+        text-align: right;
+    }
+}
+
+.wrapper{
+    width: 1000px;
+    display: block;
+    margin: 0 auto;
+    @media screen and (max-width:1170px){
+        width: 90% !important;
+    }
+}
+
+.wrap_shadow{
+    width: 100%;
+    display: inline-block;
+    margin: 0 auto;
+    .box-shadow-custom(0px, 0px, 7px, 0.4);
+      @media screen and (max-width:1170px){
+        .box-shadow-custom(0px, 0px, 0px, 0);
+        box-shadow: none;
+      }
+}
+
+
+/* STYLES GENERAUX*/
+
+.blue{
+   
+    color: @blue;
+}
+.blue_light{
+
+    color: @blue_light;
+}
+.white{
+ 
+    color: @white;
+}
+
+.bg_blue{
+   
+    background-color: @blue;
+}
+
+.bg_red{
+   
+    background-color: @red;
+}
+.bg_blue_light{
+
+     background-color: @blue_light;
+}
+.bg_white{
+ 
+     background-color: @white;
+}
+
+
+.bold{
+    font-weight: bold;
+}
+
+
+
+.normal{
+    font-weight: 400;
+}
+.medium{
+    font-weight: 500;
+}
+
+.bold{
+    font-weight: 700;
+}
+
+.extra{
+    font-weight: 800;
+}
+
+.italic{
+    font-style: italic;
+}
+
+.margin_10{
+    margin: 10px 0;
+
+}
+.margin_20{
+    margin: 20px 0;
+}
+.margin_30{
+    margin: 30px 0;
+}
+
+
+iframe{
+    border: none;
+    max-width: 100%;
+
+}
+
+a:focus, a:hover {
+    color: inherit;
+    text-decoration: underline;
+}
+
+a{
+
+text-decoration: none;
+    &:hover{
+        text-decoration: underline;
+    }
+    img{
+        border: none;
+    }
+}
+
+
+.invisible{
+    visibility: hidden;
+}
+
+.animated{
+    visibility: visible;
+}
+
+
+.overlay_explanation{
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background: rgba(11,171,238,0.4);
+        z-index: 300;
+        cursor: pointer;
+        text-decoration: none;
+        
+}
+
+   
+ h1{
+ 
+ 
+    font-family: 'Poppins', sans-serif;
+ 
+    }
+    
+    h2{
+      
+     
+        font-family: 'Oswald', sans-serif;
+        font-family: 'Poppins', sans-serif;
+        @media screen and (max-width:600px) {
+            font-size: 30px;   
+        }
+    }
+    h3{
+        
+        
+        font-family: 'Poppins', sans-serif;
+    
+        text-transform: uppercase;
+    }
+    h4{
+       
+      
+        font-family: 'Poppins', sans-serif;
+    
+    }
+    
+    hr{
+        border-bottom:none;
+        border-top: 1px solid #e1e1e1;
+        height: 1px;
+        width: 100%;
+    }
+    
+
+
+.wrap_center{
+    display: block;
+    width: 90%;
+    height: auto;
+    text-align: center;
+    margin: 0 auto;
+   
+}
+.div_center{
+    display: inline-block;
+    width: 90%;
+    height: auto;
+    text-align: center;
+    margin: 0 auto;
+   
+}
+    
+img{
+    max-width: 100%;
+}
+
+#page{
+  width: 100%;
+  height: 100%;
+  display: block;
+  
+  &.nav-is-visible{
+    overflow: hidden;
+  }
+}
+
+.illustration{
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+.pagination > .active > a, .pagination > .active > a:focus, .pagination > .active > a:hover, .pagination > .active > span, .pagination > .active > span:focus, .pagination > .active > span:hover{
+    background-color: @blue;
+}
+
+
+/*CONTENEUR PRINCIPAL*/
+.main-content {
+  position: relative;
+  z-index: 2;
+  -webkit-transition: transform 0.3s;
+  -moz-transition:transform 0.3s;
+  transition: transform 0.3s;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+
+
+    .close_overlay{
+        position: fixed;
+        background: none;
+        z-index: 3;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        opacity: 0.4;
+        display: none;
+    }
+}
+
+
+.main-content.nav-is-visible {
+    -webkit-transform: translate3d(79%, 0px, 0px);
+    -moz-transform: translate3d(-9%, 0px, 0px);
+    -ms-transform: translate3d(79%, 0px, 0px);
+    -o-transform: translate3d(79%, 0px, 0px);
+    transform: translate3d(79%, 0px, 0px);
+
+    -webkit-box-shadow: -5px 2px 8px -1px rgba(0,0,0,0.1);
+    -moz-box-shadow: -5px 2px 8px -1px rgba(0,0,0,0.1);
+    box-shadow: -5px 2px 8px -1px rgba(0,0,0,0.1);
+    overflow: hidden;
+    position: fixed;
+}
+
+section{
+    display: inline-block;
+    width: 100%;
+    height: auto;
+    float: left;
+    line-height: initial;
+
+    .wrapper_inside{
+        width: 100%;
+        display: inline-block;
+        height: auto;
+
+        .flag_link{
+            display: inline-block;
+            color: @black;
+            width: 100%;
+            text-align: center;
+            margin-bottom:30px;
+        }
+
+
+        .header_section{
+            width: 100%;
+            display: inline-block;
+            height: auto;
+            text-align: center;
+            position: relative;
+            &.header_block{
+                background: @blue_light;
+                color: @white;
+            }
+            
+
+        }
+
+
+
+
+        .content_section{
+            &.bg_white{
+                background: @white;
+            }
+
+            .read_content{
+                width: 700px;
+                display: block;
+                margin: 20px auto;
+                @media screen and (max-width:800px){
+                    width: 100%;
+                }
+
+                .read_content_big_section{
+                    width: 100%;
+                    display: inline-block;
+                    height: auto;
+                    padding: 10px 0;
+
+                    .illustration{
+                        width: 100%;
+                        height: 400px;
+                        @media screen and (max-width:800px){
+                            height: 300px;
+                        }
+                         @media screen and (max-width:800px){
+                            height: 200px;
+                        }
+                    }
+                } 
+
+
+
+            }
+
+           
+
+         
+
+        }
+
+
+
+    }
+
+
+
+}
+
+
+/* Header*/
+@import "bootstrap.min.css";
+@import "button.less";
+@import "ul_grid.less";
+@import "header.less";
+@import "block_content.less";
+@import "block_actus.less";
+@import "list_actus.less";
+@import "list_event.less";
+@import "list_event_accordeons.less";
+@import "the_background.less";
+@import "shortcuts.less";
+@import "old_games_link.less";
+@import "home_slider.less";
+@import "event_slider.less";
+@import "menu_responsive.less";
+@import "form.less";
+@import "go_up.less";
+@import "big_image.less";
+@import "global_format.less";
+@import "footer.less";
+@import "shortcuts_match.less";
+@import "shortcuts_equipe.less";
+@import "team_detail.less";
+@import "Payers_select.less";
+@import "modal.less";
+
+

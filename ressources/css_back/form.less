@@ -1,0 +1,82 @@
+@charset "UTF-8";
+/* CSS Document */
+
+form{
+
+
+          input[type="text"]{ 
+            .rounded(0px);
+            border: 1px solid @blue;
+          }
+
+         
+
+   
+
+
+        .player{
+          display: inline-block;
+          width: 100%;
+          position: relative;
+          &.man{
+            &:before{
+              content: "\e904";
+              font-family: 'cup';
+              font-size: 40px;
+              position: absolute;
+              left: 0;
+              bottom: -4px;
+              color: @white;
+            }
+          }
+           &.woman{
+            &:before{
+              content: "\e903";
+              font-family: 'cup';
+              font-size: 40px;
+              position: absolute;
+              right: 0;
+              bottom: -4px;
+              color: @white;
+            }
+
+            input[type=radio]:checked + label { 
+              color: @white;
+              background-color: @blue_light;
+          
+            }
+          }
+
+          label{
+            width: 100%;
+            padding: 25px;
+            text-align: center;
+            font-size: 25px;
+            cursor: pointer;
+          }
+
+           input[type=radio]{
+            position: absolute;
+            visibility: hidden;
+            opacity: 0;
+
+           }
+
+           input[type=radio] + label {
+            display:inline-block;
+             width: 100%;
+             color: @white;
+           
+            background: #ccc;
+             
+          }
+
+          input[type=radio]:checked + label { 
+             color: @white;
+              background-color: @blue;
+          
+          }
+
+        }
+
+}
