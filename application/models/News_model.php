@@ -27,15 +27,14 @@ class News_model extends CI_Model
 
         if ($slug === '')
         {
-
-            $this->db->select('*')
+            /*$this->db->select('*')
                      ->from($this->table)
                      ->limit($limit, $offset)
                      ->group_by('id');
-            $query = $this->db->get();
+            $query = $this->db->get();*/
 
-            /*$this->db->distinct();
-            $query = $this->db->get($this->table, $limit, $offset);*/
+            $this->db->distinct();
+            $query = $this->db->get($this->table, $limit, $offset);
             return $query->result_array();
         }
 
