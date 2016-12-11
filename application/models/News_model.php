@@ -24,9 +24,18 @@ class News_model extends CI_Model
      */
     public function get($slug = '', $limit = 0, $offset = 0)
     {
+
         if ($slug === '')
         {
-            $query = $this->db->get($this->table, $limit, $offset);
+
+            $this->db->select('*')
+                     ->from($this->table)
+                     ->limit($limit, $offset)
+                     ->group_by('id');
+            $query = $this->db->get();
+
+            /*$this->db->distinct();
+            $query = $this->db->get($this->table, $limit, $offset);*/
             return $query->result_array();
         }
 
@@ -35,14 +44,31 @@ class News_model extends CI_Model
     }
 
     /**
-     *  comptabilise le nombre d'entrée de la table
+     *  comptabilise le nombre d'entrée(s) de la table
      */
     public function count()
     {
-        $sql = "SELECT COUNT(*) FROM $this->table";
-        $query = $this->db->query($sql);
-        $result = $query->row_array();
-        $count = $result['COUNT(*)'];
+        $count = $this->db->count_all($this->table);
         return $count;
+    }
+
+    /**
+     *  permet d'ajouter des données dans la table
+     */
+    public function set_news()
+    {
+        $this->load->helper('url');
+
+        $slug = url_title($this->input->post('title'), 'underscore', TRUE);
+        $actualDate = (new DateTime())->format('Y-m-d');
+
+        $data = array(
+            'title' => $this->input->post('title'),
+            'date' => $actualDate,
+            'rewrite' => $slug,
+            'content' => $this->input->post('text')
+        );
+
+        return $this->db->insert('news', $data);
     }
 }

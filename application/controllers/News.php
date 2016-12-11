@@ -36,10 +36,10 @@ class News extends CI_Controller
     {
         $limit = 2; // définit le nombre de news affichée(s) par page
 
-        $totalPages = ceil($this->news_model->count() / $limit); // nombre total de page(s)
+        $maxOffset = $this->news_model->count(); // offset maximal
         $data['news'] = $this->news_model->get('', $limit, $offset);
-        $data['previous'] = ($offset - $limit) > 0 ? $offset - $limit : 0; // recalcule de l'offset par rapport à la page sur laquelle on se trouve
-        $data['next'] = ($offset + $limit) > $totalPages ? $totalPages : $offset + $limit;
+        $data['previous'] = ($offset - $limit) > 0 ? ($offset - $limit) : 0; // recalcule de l'offset par rapport à la page sur laquelle on se trouve
+        $data['next'] = ($offset + $limit) > $maxOffset ? $maxOffset : ($offset + $limit);
 
         $this->loadView('index', $data);
     }
@@ -58,5 +58,27 @@ class News extends CI_Controller
         }
 
         $this->loadView('view', $data);
+    }
+
+    public function create()
+    {
+        $this->load->helper('form');
+        $this->load->library('form_validation');
+
+        $data['title'] = 'Create a news item';
+        $data['model'] = $this->news_model->table;
+
+        $this->form_validation->set_rules('title', 'Title', 'required');
+        $this->form_validation->set_rules('text', 'Text', 'required');
+
+        if ($this->form_validation->run() === FALSE)
+        {
+            $this->loadView('create', $data);
+        }
+        else
+        {
+            $this->news_model->set_news();
+            $this->loadView('success', $data);
+        }
     }
 }
